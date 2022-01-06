@@ -8,6 +8,7 @@ const useFirebase=()=>{
     const [user,setUser]=useState({});
     const [error,setError]=useState('');
     const [isLoading,setIsLoading]=useState(true);
+    const [admin,setAdmin]=useState(false);
     const massage='Invalid Username or Password';
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -16,6 +17,7 @@ const useFirebase=()=>{
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                saveUser(email,name,'POST');
                 setError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
@@ -83,6 +85,33 @@ const useFirebase=()=>{
         });
         return () => unsubscribe;
     }, [auth]);
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/users/${user.email}`)
+        .then(res=>res.json())
+        .then(data=>{
+            setAdmin(data.admin);
+            if (data.admin) {
+                localStorage.setItem("state", true);
+              }
+        })
+    },[user.email])
+
+    const saveUser=(email,displayName,method)=>{
+        const user={email,displayName};
+        fetch('http://localhost:5000/users',{
+            method:method,
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+            setIsLoading(false)
+        });
+    }
     const logout = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
@@ -96,7 +125,14 @@ const useFirebase=()=>{
             });
     }
     return{
-        user,error,isLoading,logout,googleSignIn,loginUser,registerUser
+        user,
+        admin,
+        error,
+        isLoading,
+        logout,
+        googleSignIn,
+        loginUser,
+        registerUser
     }
 }
 export default useFirebase;

@@ -3,13 +3,16 @@ import { Container, Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import '../../../Style/style.css';
+import logo from '../../../images/logo.png';
 const Header = () => {
     const { user, logout } = useAuth();
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand as={Link} to="/home">Books</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home"><Image
+                                className='logo' src={logo}
+                            ></Image> Books</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">

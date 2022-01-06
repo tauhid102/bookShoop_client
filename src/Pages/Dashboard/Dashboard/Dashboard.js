@@ -4,10 +4,12 @@ import { Link, Route, Switch } from 'react-router-dom';
 import { useRouteMatch } from 'react-router-dom/cjs/react-router-dom.min';
 import useAuth from '../../hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import MyOrder from '../MyOrder/MyOrder';
 import Payment from '../Payment/Payment';
 import Review from '../Review/Review';
-
+import logo from '../../../images/logo.png';
+import AddProduct from '../AddProduct/AddProduct';
 
 const Dashboard = () => {
     const { user, logout, admin } = useAuth();
@@ -21,9 +23,9 @@ const Dashboard = () => {
 
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="ms-auto">
-                                 <Navbar.Text className='me-2'>
-                                 {user?.displayName}
-                                    </Navbar.Text>
+                                <Navbar.Text className='me-2'>
+                                    {user?.displayName}
+                                </Navbar.Text>
                                 <Image
                                     className='user-image' src={user?.photoURL}
                                 ></Image>
@@ -47,7 +49,9 @@ const Dashboard = () => {
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav " />
                                 <Navbar.Collapse id="responsive-navbar-nav">
                                     <Nav className="me-auto flex-column">
-                                        <Navbar.Brand as={Link} to="/home" className=''>Book Shop</Navbar.Brand>
+                                        <Navbar.Brand as={Link} to="/home" className=''><Image
+                                            className='logo' src={logo}
+                                        ></Image>  Book Shop</Navbar.Brand>
                                         <Nav.Link className='border-bottom' as={Link} to={`${url}/pay`}>Pay</Nav.Link>
                                         <Nav.Link className='border-bottom' as={Link} to={`${url}/myorder`}>My Order</Nav.Link>
                                         <Nav.Link className='border-bottom' as={Link} to={`${url}/review`}>Review</Nav.Link>
@@ -61,7 +65,7 @@ const Dashboard = () => {
                                                 <Nav.Link className='border-bottom' as={Link} to={`${url}/makeadmin`}>Make Admin</Nav.Link>
                                             </div>
                                         }
-                                        
+
                                         {
                                             user?.email ?
                                                 <button className="btn btn-dark logout-button" onClick={logout}>Logout</button>
@@ -90,7 +94,7 @@ const Dashboard = () => {
                                 <Review></Review>
                             </Route>
                             <AdminRoute path={`${url}/makeadmin`}>
-                                {/* <MakeAdmin></MakeAdmin> */}
+                                <MakeAdmin></MakeAdmin>
                             </AdminRoute>
                             <AdminRoute path={`${url}/manageorder`}>
                                 {/* <ManageAllOrder></ManageAllOrder> */}
@@ -102,7 +106,7 @@ const Dashboard = () => {
                                 {/* <ManageReview></ManageReview> */}
                             </AdminRoute>
                             <AdminRoute path={`${url}/addproduct`}>
-                                {/* <AddProduct></AddProduct> */}
+                                <AddProduct></AddProduct>
                             </AdminRoute>
                         </Switch>
                     </div>
