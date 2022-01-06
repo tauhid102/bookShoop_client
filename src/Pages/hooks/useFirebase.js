@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react"
 import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup,updateProfile} from "firebase/auth";
 import userAuthentication from "../Login/Firebase/firebase.init";
+import userPic from "../../images/defaultPic.png";
 
 userAuthentication();
 const useFirebase=()=>{
     const [user,setUser]=useState({});
     const [error,setError]=useState('');
     const [isLoading,setIsLoading]=useState(true);
-
+    const massage='Invalid Username or Password';
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
@@ -20,16 +21,17 @@ const useFirebase=()=>{
                 setUser(newUser);
 
                 updateProfile(auth.currentUser, {
-                    displayName: name
+                    displayName: name,
+                    photoURL: userPic
                 }).then(() => {
                 }).catch((error) => {
-                    setError(error.message);
+                    setError(massage);
                 });
 
                 history.replace('/');
             })
             .catch((error) => {
-                setError(error.message);
+                setError(massage);
                 // ..
             }).finally(() => {
                 setIsLoading(false)
@@ -46,7 +48,7 @@ const useFirebase=()=>{
                 setError('');
             })
             .catch((error) => {
-                setError(error.message);
+                setError(massage);
             })
             .finally(() => {
                 setIsLoading(false)
@@ -63,7 +65,7 @@ const useFirebase=()=>{
                 history.replace(destination);
                 
             }).catch((error) => {
-                setError(error.message);
+                setError(massage);
             })
             .finally(() => {
                 // setIsLoading(false)
@@ -73,6 +75,7 @@ const useFirebase=()=>{
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
+                console.log(user)
             } else {
                 setUser({});
             }

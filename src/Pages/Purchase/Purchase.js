@@ -19,7 +19,7 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => setPurchase(data));
     }, [purchaseId]);
-
+    console.log(purchase);
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -65,7 +65,10 @@ const Purchase = () => {
                             <div className="card-body">
                                 <h5 className="card-title">{purchase.name}</h5>
                                 <h5 className="card-title">Price: <span className='text-danger'>${purchase.price}</span></h5>
-                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
+                                <h6 className="card-title">Author: <span className=''>{purchase.author}</span></h6>
+                                <h6 className="card-title">Edition: <span className=''>{purchase.edition}</span></h6>
+                                <h6 className="card-title">Category: <span className=''>{purchase.category}</span></h6>
+                                <p className="card-text"></p>
                             </div>
                         </div>
                     </div>
