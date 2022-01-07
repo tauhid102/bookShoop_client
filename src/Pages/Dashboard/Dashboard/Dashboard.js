@@ -10,6 +10,10 @@ import Payment from '../Payment/Payment';
 import Review from '../Review/Review';
 import logo from '../../../images/logo.png';
 import AddProduct from '../AddProduct/AddProduct';
+import ManageProduct from '../ManageProduct/ManageProduct';
+import ManageAllOrder from '../ManageOrder/ManageOrder';
+import ManageReview from '../ManageReview/ManageReview';
+
 
 const Dashboard = () => {
     const { user, logout, admin } = useAuth();
@@ -49,9 +53,9 @@ const Dashboard = () => {
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav " />
                                 <Navbar.Collapse id="responsive-navbar-nav">
                                     <Nav className="me-auto flex-column">
-                                        <Navbar.Brand as={Link} to="/home" className=''><Image
+                                        <Navbar.Brand as={Link} to="/home" className='border border-dark p-2 rounded-pill'><Image
                                             className='logo' src={logo}
-                                        ></Image>  Book Shop</Navbar.Brand>
+                                        ></Image> Book Shop</Navbar.Brand>
                                         <Nav.Link className='border-bottom' as={Link} to={`${url}/pay`}>Pay</Nav.Link>
                                         <Nav.Link className='border-bottom' as={Link} to={`${url}/myorder`}>My Order</Nav.Link>
                                         <Nav.Link className='border-bottom' as={Link} to={`${url}/review`}>Review</Nav.Link>
@@ -97,13 +101,13 @@ const Dashboard = () => {
                                 <MakeAdmin></MakeAdmin>
                             </AdminRoute>
                             <AdminRoute path={`${url}/manageorder`}>
-                                {/* <ManageAllOrder></ManageAllOrder> */}
+                                <ManageAllOrder></ManageAllOrder>
                             </AdminRoute>
                             <AdminRoute path={`${url}/manageproduct`}>
-                                {/* <ManageProduct></ManageProduct> */}
+                                <ManageProduct></ManageProduct>
                             </AdminRoute>
                             <AdminRoute path={`${url}/managereview`}>
-                                {/* <ManageReview></ManageReview> */}
+                                <ManageReview></ManageReview>
                             </AdminRoute>
                             <AdminRoute path={`${url}/addproduct`}>
                                 <AddProduct></AddProduct>

@@ -68,6 +68,7 @@ const Purchase = () => {
                                 <h6 className="card-title">Author: <span className=''>{purchase.author}</span></h6>
                                 <h6 className="card-title">Edition: <span className=''>{purchase.edition}</span></h6>
                                 <h6 className="card-title">Category: <span className=''>{purchase.category}</span></h6>
+                                <h6 className="card-title">Details: <span className=''>{purchase.Details}</span></h6>
                                 <p className="card-text"></p>
                             </div>
                         </div>
