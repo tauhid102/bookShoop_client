@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Services = () => {
     const [books,setBooks]=useState([]);
     useEffect(()=>{
-        fetch('https://boiling-journey-11612.herokuapp.com/books')
+        fetch('http://localhost:5000/books')
         .then(res=>res.json())
         .then(data=>setBooks(data))
     },[]);

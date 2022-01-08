@@ -9,10 +9,10 @@ const MakeAdmin = () => {
         e.target.value = '';
     }
     const handleMakeAdmin = e => {
-        const proceed = window.confirm('Are you sure, you want to delete?');
+        const proceed = window.confirm('Are you sure, you want to make admin?');
         const user = { email }
         if (proceed) {
-            fetch('http://lochttps://fathomless-cliffs-39338.herokuapp.com/users/admin', {
+            fetch('http://localhost:5000/users/admin', {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

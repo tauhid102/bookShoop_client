@@ -13,6 +13,7 @@ import Purchase from './Pages/Purchase/Purchase';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import MyProfile from './MyProfile/MyProfile';
 function App() {
   return (
     <div className="">
@@ -36,6 +37,9 @@ function App() {
             </Route>
             <PrivateRoute path='/purchase/:purchaseId'>
               <Purchase></Purchase>
+            </PrivateRoute>          
+            <PrivateRoute path='/myprofile'>
+              <MyProfile></MyProfile>
             </PrivateRoute>          
             <PrivateRoute path='/dashboard'>
               <Dashboard></Dashboard>

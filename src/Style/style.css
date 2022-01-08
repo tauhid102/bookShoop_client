@@ -8,3 +8,15 @@
 #basic-nav-dropdown{
     padding: 0;
 }
+.icons{
+    margin-bottom: 0px;
+}
+.social i{
+    font-size: 50px;
+    margin-left: 10px;
+    transition: 1s;
+}
+.social i:hover{
+    color: rgb(8, 235, 76);
+    cursor: pointer;
+}

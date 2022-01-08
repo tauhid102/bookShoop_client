@@ -13,6 +13,7 @@ import AddProduct from '../AddProduct/AddProduct';
 import ManageProduct from '../ManageProduct/ManageProduct';
 import ManageAllOrder from '../ManageOrder/ManageOrder';
 import ManageReview from '../ManageReview/ManageReview';
+import MyProfile from '../../../MyProfile/MyProfile';
 
 
 const Dashboard = () => {
@@ -56,17 +57,18 @@ const Dashboard = () => {
                                         <Navbar.Brand as={Link} to="/home" className='border border-dark p-2 rounded-pill'><Image
                                             className='logo' src={logo}
                                         ></Image> Book Shop</Navbar.Brand>
-                                        <Nav.Link className='border-bottom' as={Link} to={`${url}/pay`}>Pay</Nav.Link>
-                                        <Nav.Link className='border-bottom' as={Link} to={`${url}/myorder`}>My Order</Nav.Link>
-                                        <Nav.Link className='border-bottom' as={Link} to={`${url}/review`}>Review</Nav.Link>
+                                        <Nav.Link className='border-bottom' as={Link} to={`${url}/pay`}><i class="fas fa-money-check-alt"></i> Pay</Nav.Link>
+                                        <Nav.Link className='border-bottom' as={Link} to={`${url}/myorder`}><i class="fas fa-cart-arrow-down"></i> My Order</Nav.Link>
+                                        <Nav.Link className='border-bottom' as={Link} to={`${url}/review`}><i class="fas fa-comment"></i> Review</Nav.Link>
+                                        <Nav.Link className='border-bottom' as={Link} to={`${url}/myprofile`}><i class="fas fa-id-badge"></i> Profile</Nav.Link>
                                         {
                                             admin && <div>
 
-                                                <Nav.Link className='border-bottom' as={Link} to={`${url}/manageorder`}>Manage All Order</Nav.Link>
-                                                <Nav.Link className='border-bottom' as={Link} to={`${url}/manageproduct`}>Manage Product</Nav.Link>
-                                                <Nav.Link className='border-bottom' as={Link} to={`${url}/managereview`}>Manage Review</Nav.Link>
-                                                <Nav.Link className='border-bottom' as={Link} to={`${url}/addproduct`}>Add Product</Nav.Link>
-                                                <Nav.Link className='border-bottom' as={Link} to={`${url}/makeadmin`}>Make Admin</Nav.Link>
+                                                <Nav.Link className='border-bottom' as={Link} to={`${url}/manageorder`}><i class="fas fa-users-cog"></i> Manage All Order</Nav.Link>
+                                                <Nav.Link className='border-bottom' as={Link} to={`${url}/manageproduct`}><i class="fab fa-product-hunt"></i> Manage Product</Nav.Link>
+                                                <Nav.Link className='border-bottom' as={Link} to={`${url}/managereview`}><i class="fas fa-comments"></i> Manage Review</Nav.Link>
+                                                <Nav.Link className='border-bottom' as={Link} to={`${url}/addproduct`}><i class="fas fa-plus-square"></i> Add Product</Nav.Link>
+                                                <Nav.Link className='border-bottom' as={Link} to={`${url}/makeadmin`}><i class="fas fa-unlock-alt"></i> Make Admin</Nav.Link>
                                             </div>
                                         }
 
@@ -96,6 +98,9 @@ const Dashboard = () => {
                             </Route>
                             <Route path={`${url}/review`}>
                                 <Review></Review>
+                            </Route>
+                            <Route path={`${url}/myprofile`}>
+                                <MyProfile></MyProfile>
                             </Route>
                             <AdminRoute path={`${url}/makeadmin`}>
                                 <MakeAdmin></MakeAdmin>
