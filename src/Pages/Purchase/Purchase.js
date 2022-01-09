@@ -37,7 +37,7 @@ const Purchase = () => {
             itemName: purchase.name,
             itemPrice: purchase.price
         }
-        fetch('http://localhost:5000/purchased', {
+        fetch('https://obscure-mesa-53122.herokuapp.com/purchased', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

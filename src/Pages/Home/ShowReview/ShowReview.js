@@ -7,7 +7,7 @@ const ShowReview = () => {
     const [reviews, setReviews] = useState([]);
     const { isLoading, setIsLoading } = useAuth();
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://obscure-mesa-53122.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);

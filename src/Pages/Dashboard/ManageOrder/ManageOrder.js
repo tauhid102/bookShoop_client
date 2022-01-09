@@ -5,7 +5,7 @@ const ManageOrder = () => {
     const [orders, setOrder] = useState([]);
     const [accepted, setAccepted] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:5000/purchased/allorder')
+        fetch('https://obscure-mesa-53122.herokuapp.com/purchased/allorder')
             .then(res => res.json())
             .then(data => {
                 setOrder(data);
@@ -16,7 +16,7 @@ const ManageOrder = () => {
     const handleCancenOrder = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/purchased/${id}`;
+            const url = `https://obscure-mesa-53122.herokuapp.com/purchased/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -34,7 +34,7 @@ const ManageOrder = () => {
         const ids = { id };
         const proceed = window.confirm('Are you sure, you want to accepted?');
         if (proceed) {
-            const url = `http://localhost:5000/purchased/${id}`;
+            const url = `https://obscure-mesa-53122.herokuapp.com/purchased/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
