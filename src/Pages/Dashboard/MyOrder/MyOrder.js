@@ -46,6 +46,9 @@ const MyOrder = () => {
                             <Card.Text>
                                Phone: {order.phone}
                             </Card.Text>
+                            <Card.Text>
+                                   Status: {order.status}
+                                </Card.Text>
                         </Card.Body>
                         <button onClick={() => handleCancenOrder(order._id)} className="btn btn-danger b-0">Cancel Order</button>
                     </Card>

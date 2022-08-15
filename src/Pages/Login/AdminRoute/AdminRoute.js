@@ -6,9 +6,9 @@ const AdminRoute = ({children,...rest}) => {
     const { user, isLoading} = useAuth();
     const states = localStorage.getItem("state");
     if (isLoading) {
-        return <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
+        return <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
             </div>
         </div>
     }

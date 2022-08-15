@@ -38,21 +38,21 @@ const Login = () => {
                     <div className='w-100 m-auto mt-5 loginFrom'>
                         <h3 className=' text-center'>Sign In With</h3>
                         <div>
-                            <form class="row g-3" onSubmit={handleLoginSubmit}>
-                                <div class="col-12">
-                                    <label for="inputEmail4" class="form-label">Email</label>
-                                    <input type="email" className="" name="email" onBlur={handleOnBlur} class="form-control" id="inputEmail4" />
+                            <form className="row g-3" onSubmit={handleLoginSubmit}>
+                                <div className="col-12">
+                                    <label for="inputEmail4" className="form-label">Email</label>
+                                    <input type="email" className="" name="email" onBlur={handleOnBlur} className="form-control" id="inputEmail4" />
                                 </div>
-                                <div class="col-12">
-                                    <label for="inputPassword4" class="form-label">Password</label>
-                                    <input type="password" name="password" onBlur={handleOnBlur} class="form-control " id="inputPassword4" />
+                                <div className="col-12">
+                                    <label for="inputPassword4" className="form-label">Password</label>
+                                    <input type="password" name="password" onBlur={handleOnBlur} className="form-control " id="inputPassword4" />
                                 </div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-dark  text-center mb-3">Sign in</button>
+                                <div className="col-12 text-center">
+                                    <button type="submit" className="btn btn-dark  text-center mb-3">Sign in</button>
                                 </div>
                             </form>
                             {
-                            error && <div class="alert alert-danger" role="alert">
+                            error && <div className="alert alert-danger" role="alert">
                                 {error}
                             </div>
                         }

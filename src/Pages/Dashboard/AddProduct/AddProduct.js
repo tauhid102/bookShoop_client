@@ -38,7 +38,7 @@ const AddProduct = () => {
         <div className="container">
                 <div className="row row-cols-1 row-cols-sm-2">
                     <div className="col">
-                        <h3 className='mt-5'>Please Provide<span className='text-danger'> Information </span>For Add <span className='text-danger'>Car</span></h3>
+                        <h3 className='mt-5'>Please Provide<span className='text-danger'> Information </span>For Add <span className='text-danger'>Book</span></h3>
                         <form className="row g-3 w-100 inputFrom mt-2" id="create-course-form" onSubmit={handleAddProduct}>
                             <div className="col-12">
                                 <label for="inputAddress" className="form-label">Book Name</label>
@@ -72,7 +72,7 @@ const AddProduct = () => {
                                 <button type="submit" className="btn btn-dark">Add Product</button>
                             </div>
                             {
-                                confirm && <div class="alert alert-success" role="alert">
+                                confirm && <div className="alert alert-success" role="alert">
                                     Add Car Successfully
                                 </div>
                             }

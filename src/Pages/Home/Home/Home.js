@@ -4,6 +4,7 @@ import Slider from '../Slider/Slider';
 import Services from '../../Home/Services/Services';
 import ShowReview from '../ShowReview/ShowReview';
 import Footer from '../../Share/Footer/Footer';
+import Counter from '../Counter/Counter';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Header></Header>
             <Slider></Slider>
             <Services></Services>
+            <Counter></Counter>
             <ShowReview></ShowReview>
             <Footer></Footer>
         </div>

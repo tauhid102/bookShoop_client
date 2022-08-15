@@ -7,11 +7,11 @@ import banner3 from '../../../images/slider/slider3.jpg'
 const Slider = () => {
     return (
         <div className='container mt-5 slider'>
-        <div class="row row-cols-1 row-cols-md-2">
-                <div class="col d-flex justify-content-center align-items-center">
+        <div className="row row-cols-1 row-cols-md-2">
+                <div className="col d-flex justify-content-center align-items-center">
                     <h1>Books For Every Book Worm</h1>
                 </div>
-                <div class="col">
+                <div className="col">
                     <Carousel>
                         <Carousel.Item className="banner" >
                             <img

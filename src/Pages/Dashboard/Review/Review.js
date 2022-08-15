@@ -52,7 +52,7 @@ const Review = () => {
                             <button type="submit" className="btn btn-dark">Submit</button>
                         </div>
                         {
-                                confirm && <div class="alert alert-success" role="alert">
+                                confirm && <div className="alert alert-success" role="alert">
                                     Review Placed Successfully
                                 </div>
                             }

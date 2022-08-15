@@ -1,0 +1,32 @@
+.counter-background{
+    background-image: url("../../../images/15410.jpg");
+    background-repeat: no-repeat;
+    background-position: fixed;
+    /* background-size: 100% 400px; */
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 50px 0;
+}
+.text{
+    color: white;
+    padding: 100px 0;
+    background-color: rgba(0, 0, 0, 0.726);
+}
+.text h1{
+    font-weight: 900;
+    margin-bottom: 0;
+}
+.information{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: space-between;
+}
+.icons{
+    font-size: 20px;
+    margin-right: 8px;
+}
+.counterIcons{
+    font-size: 53px;
+    margin-right: 8px;
+}

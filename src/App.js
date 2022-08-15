@@ -14,6 +14,7 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import MyProfile from './MyProfile/MyProfile';
+import Registration from './Pages/Login/NodeAuth/Registration/Registration';
 function App() {
   return (
     <div className="">
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path='/register'>
               <Register></Register>
+            </Route>
+            <Route path='/nodeRegistration'>
+              <Registration></Registration>
             </Route>
             <Route path='/books'>
               <AllBooks></AllBooks>

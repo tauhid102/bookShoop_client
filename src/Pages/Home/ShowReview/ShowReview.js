@@ -13,11 +13,10 @@ const ShowReview = () => {
                 setReviews(data);
             });
     }, []);
-    console.log(reviews);
     if (isLoading) {
-        return <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
+        return <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
             </div>
         </div>
     }
@@ -26,8 +25,8 @@ const ShowReview = () => {
             <h3 className='text-center mt-4'>Customer <span className='text-danger'>Review</span></h3>
             <p className='text-danger m-auto text-center border-2 mb-3 border-bottom border-danger w-25'>Customer Feedback,Rating and Name</p>
             <Row xs={1} md={2} lg={3} className="g-1">
-                {reviews.map(review => <>
-                    <Col>
+                {reviews.map(review => <div key={review._id}>
+                    <Col >
                         <Card border="secondary" style={{ width: '18rem' }}>
                             <Card.Header>Rating: <Rating
                                 initialRating={review.rating}
@@ -42,7 +41,7 @@ const ShowReview = () => {
                             <Card.Footer>Name: {review.name}</Card.Footer>
                         </Card>
                     </Col>
-                </>)}
+                </div>)}
             </Row>
         </div>
     );

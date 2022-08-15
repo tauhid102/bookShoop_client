@@ -5,9 +5,9 @@ import { Route, Redirect } from 'react-router-dom';
 const PrivateRoute = ({children,...rest}) => {
     const { user, isLoading } = useAuth();
     if (isLoading) {
-        return <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
+        return <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
             </div>
         </div>
     }

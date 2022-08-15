@@ -18,6 +18,7 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/books">All Books</Nav.Link>
+                            <Nav.Link as={Link} to="/nodeRegistration">Node Registration</Nav.Link>
                         </Nav>
                         <Nav className='ml-auto'>
                             <Navbar.Text className='me-2'>

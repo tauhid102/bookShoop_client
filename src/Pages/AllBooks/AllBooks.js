@@ -16,7 +16,7 @@ const AllBooks = () => {
                 <div className='container'>
                     <h3 className='text-center mt-4'>Find Your Books</h3>
                     <h5 className='text-danger m-auto text-center border-2 mb-3 border-bottom border-danger w-25'>Get by books by choice</h5>
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                         {
                             books.map(book => <div className="col">
                             <div className="card">
