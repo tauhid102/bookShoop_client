@@ -6,13 +6,9 @@ const Services = () => {
   const [books, setBooks] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [page, setPage] = useState(0);
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/books")
-  //     .then((res) => res.json())
-  //     .then((data) => setBooks(data));
-  // }, []);
+
   useEffect(() => {
-    fetch(`https://obscure-mesa-53122.herokuapp.com/books?page=${page}`)
+    fetch(`https://obscure-mesa-53122.herokuapp.com/books/booksCollection?page=${page}`)
       .then((res) => res.json())
       .then((data) => {
         setBooks(data.books)
@@ -21,7 +17,6 @@ const Services = () => {
         setPageCount(pageNumber);
       });
   }, [page]);
-  console.log(books);
   return (
     <div className="container mt-5">
       <h1 className="text-center">Find Your Books</h1>
