@@ -5,7 +5,7 @@ import Header from '../Share/Header/Header';
 const AllBooks = () => {
     const [books,setBooks]=useState([]);
     useEffect(()=>{
-        fetch('https://obscure-mesa-53122.herokuapp.com/books')
+        fetch('bookshoopserver-production.up.railway.app/books')
         .then(res=>res.json())
         .then(data=>setBooks(data))
     },[]);

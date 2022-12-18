@@ -92,7 +92,7 @@ const useFirebase=()=>{
     }, [auth]);
 
     useEffect(()=>{
-        fetch(`https://obscure-mesa-53122.herokuapp.com/users/${user.email}`)
+        fetch(`bookshoopserver-production.up.railway.app/users/${user.email}`)
         .then(res=>res.json())
         .then(data=>{
             setAdmin(data.admin);
@@ -100,11 +100,11 @@ const useFirebase=()=>{
                 localStorage.setItem("state", true);
               }
         })
-    },[user.email])
+    },[user.email]);
 
     const saveUser=(email,displayName,method)=>{
         const user={email,displayName};
-        fetch('https://obscure-mesa-53122.herokuapp.com/users',{
+        fetch('bookshoopserver-production.up.railway.app/users',{
             method:method,
             headers:{
                 'content-type':'application/json'

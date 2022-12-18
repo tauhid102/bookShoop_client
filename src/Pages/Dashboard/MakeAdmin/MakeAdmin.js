@@ -12,7 +12,7 @@ const MakeAdmin = () => {
         const proceed = window.confirm('Are you sure, you want to make admin?');
         const user = { email }
         if (proceed) {
-            fetch('https://obscure-mesa-53122.herokuapp.com/users/admin', {
+            fetch('bookshoopserver-production.up.railway.app/users/admin', {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

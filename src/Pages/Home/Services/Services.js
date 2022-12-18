@@ -8,7 +8,7 @@ const Services = () => {
   const [page, setPage] = useState(0);
 
   useEffect(() => {
-    fetch(`https://obscure-mesa-53122.herokuapp.com/books/booksCollection?page=${page}`)
+    fetch(`bookshoopserver-production.up.railway.app/books/booksCollection?page=${page}`)
       .then((res) => res.json())
       .then((data) => {
         setBooks(data.books)

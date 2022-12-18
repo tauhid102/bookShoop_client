@@ -6,7 +6,7 @@ const MyOrder = () => {
     const [orders, setOrder] = useState([]);
     const { user } = useAuth();
     useEffect(() => {
-        fetch(`https://obscure-mesa-53122.herokuapp.com/purchased/?email=${user.email}`)
+        fetch(`bookshoopserver-production.up.railway.app/purchased/?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [user.email]);
@@ -14,7 +14,7 @@ const MyOrder = () => {
     const handleCancenOrder = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `https://obscure-mesa-53122.herokuapp.com/purchased/${id}`;
+            const url = `bookshoopserver-production.up.railway.app/purchased/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

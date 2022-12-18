@@ -37,7 +37,7 @@ const Purchase = () => {
             itemName: purchase.name,
             itemPrice: purchase.price
         }
-        fetch('https://obscure-mesa-53122.herokuapp.com/purchased', {
+        fetch('bookshoopserver-production.up.railway.app/purchased', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

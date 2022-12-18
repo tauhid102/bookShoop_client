@@ -19,7 +19,7 @@ const AddProduct = () => {
         const product = {
             ...addProduct
         }
-        fetch('https://obscure-mesa-53122.herokuapp.com/books', {
+        fetch('bookshoopserver-production.up.railway.app/books', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
