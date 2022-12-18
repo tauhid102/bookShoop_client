@@ -14,7 +14,7 @@ const Purchase = () => {
 
 
     useEffect(() => {
-        const url = `https://hidden-river-82728.herokuapp.com/books/${purchaseId}`;
+        const url = `https://bookshoopserver-production.up.railway.app/books/${purchaseId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setPurchase(data));
