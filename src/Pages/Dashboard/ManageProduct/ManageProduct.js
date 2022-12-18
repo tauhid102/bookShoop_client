@@ -5,7 +5,7 @@ const ManageProduct = () => {
     const [products,setProduct]=useState([]);
 
     useEffect(() => {
-        fetch('bookshoopserver-production.up.railway.app/books')
+        fetch('https://bookshoopserver-production.up.railway.app/books')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, []);
@@ -13,7 +13,7 @@ const ManageProduct = () => {
     const handleDeleteProduct=(id)=>{
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `bookshoopserver-production.up.railway.app/books/${id}`;
+            const url = `https://bookshoopserver-production.up.railway.app/books/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -5,7 +5,7 @@ const ManageReview = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('bookshoopserver-production.up.railway.app/reviews')
+        fetch('https://bookshoopserver-production.up.railway.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
@@ -13,7 +13,7 @@ const ManageReview = () => {
     const handleDeleteReview = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `bookshoopserver-production.up.railway.app/reviews/${id}`;
+            const url = `https://bookshoopserver-production.up.railway.app/reviews/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

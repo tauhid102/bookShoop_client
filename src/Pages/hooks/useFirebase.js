@@ -92,7 +92,7 @@ const useFirebase=()=>{
     }, [auth]);
 
     useEffect(()=>{
-        fetch(`bookshoopserver-production.up.railway.app/users/${user.email}`)
+        fetch(`https://bookshoopserver-production.up.railway.app/users/${user.email}`)
         .then(res=>res.json())
         .then(data=>{
             setAdmin(data.admin);
@@ -104,7 +104,7 @@ const useFirebase=()=>{
 
     const saveUser=(email,displayName,method)=>{
         const user={email,displayName};
-        fetch('bookshoopserver-production.up.railway.app/users',{
+        fetch('https://bookshoopserver-production.up.railway.app/users',{
             method:method,
             headers:{
                 'content-type':'application/json'

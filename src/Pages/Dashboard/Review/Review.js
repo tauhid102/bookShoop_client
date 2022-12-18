@@ -15,7 +15,7 @@ const Review = () => {
         const reviews = {
             ...review
         }
-        fetch('bookshoopserver-production.up.railway.app/reviews', {
+        fetch('https://bookshoopserver-production.up.railway.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

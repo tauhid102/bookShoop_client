@@ -5,7 +5,7 @@ import Header from '../Share/Header/Header';
 const AllBooks = () => {
     const [books,setBooks]=useState([]);
     useEffect(()=>{
-        fetch('bookshoopserver-production.up.railway.app/books')
+        fetch('https://bookshoopserver-production.up.railway.app/books')
         .then(res=>res.json())
         .then(data=>setBooks(data))
     },[]);

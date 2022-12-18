@@ -19,7 +19,7 @@ const AddProduct = () => {
         const product = {
             ...addProduct
         }
-        fetch('bookshoopserver-production.up.railway.app/books', {
+        fetch('https://bookshoopserver-production.up.railway.app/books', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

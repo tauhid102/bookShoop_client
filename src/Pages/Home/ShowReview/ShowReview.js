@@ -7,7 +7,7 @@ const ShowReview = () => {
   const [reviews, setReviews] = useState([]);
   const { isLoading, setIsLoading } = useAuth();
   useEffect(() => {
-    fetch("bookshoopserver-production.up.railway.app/reviews")
+    fetch("https://bookshoopserver-production.up.railway.app/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);

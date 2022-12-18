@@ -12,7 +12,7 @@ const MakeAdmin = () => {
         const proceed = window.confirm('Are you sure, you want to make admin?');
         const user = { email }
         if (proceed) {
-            fetch('bookshoopserver-production.up.railway.app/users/admin', {
+            fetch('https://bookshoopserver-production.up.railway.app/users/admin', {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
